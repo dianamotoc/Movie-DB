@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Index</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<nav th:replace="menuBar :: menubar"></nav>
+<div class="container">
+    <div id="flow">
+        <span class="flow-1"></span>
+        <span class="flow-2"></span>
+        <span class="flow-3"></span>
+    </div>
+        <!-- Developers -->
+        <div class="row columns">
+            <div class="column is-one-third" >
+                <div class="card large">
+                    <div class="card-image">
+                        <figure class="image">
+                            <a th:href="@{'/title?name=' + ${movies.get(0).getName()}}"><img th:src="${movies.get(0).getPathToImage()}" alt="Image"></a>
+                        </figure>
+                    </div>
+                    <div class="card-content">
+                        <div class="media">
+                            <div class="media-left">
+                                <figure class="image is-96x96">
+                                    <img th:src="${movies.get(0).getDirector().getPathToImage()}" alt="Image">
+                                </figure>
+                            </div>
+                            <div class="media-content">
+                                <p class="title is-4 no-padding" th:value="${movies.get(0).getName()}"></p>
+                                <p class="subtitle is-6" th:value="${movies.get(0).getDirector().getName()}"></p>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <p th:value="${movies.get(0).getDescription()}"></p>
+                            <div class="background-icon"><span class="icon-twitter"></span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column is-one-third" >
+                <div class="card large">
+                    <div class="card-image">
+                        <figure class="image">
+                            <a th:href="@{'/title?name=' + ${movies.get(1).getName()}}"><img th:src="${movies.get(1).getPathToImage()}" alt="Image"></a>
+                        </figure>
+                    </div>
+                    <div class="card-content">
+                        <div class="media">
+                            <div class="media-left">
+                                <figure class="image is-96x96">
+                                    <img th:src="${movies.get(1).getDirector().getPathToImage()}" alt="Image">
+                                </figure>
+                            </div>
+                            <div class="media-content">
+                                <p class="title is-4 no-padding" th:value="${movies.get(1).getName()}"></p>
+                                <p class="subtitle is-6" th:value="${movies.get(1).getDirector().getName()}"></p>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <p th:value="${movies.get(1).getDescription()}"></p>
+                            <div class="background-icon"><span class="icon-twitter"></span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column is-one-third" >
+                <div class="card large">
+                    <div class="card-image">
+                        <figure class="image">
+                            <a th:href="@{'/title?name=' + ${movies.get(2).getName()}}"><img th:src="${movies.get(2).getPathToImage()}" alt="Image"></a>
+                        </figure>
+                    </div>
+                    <div class="card-content">
+                        <div class="media">
+                            <div class="media-left">
+                                <figure class="image is-96x96">
+                                    <img th:src="${movies.get(2).getDirector().getPathToImage()}" alt="Image">
+                                </figure>
+                            </div>
+                            <div class="media-content">
+                                <p class="title is-4 no-padding" th:value="${movies.get(2).getName()}"></p>
+                                <p class="subtitle is-6" th:value="${movies.get(1).getDirector().getName()}"></p>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <p th:value="${movies.get(2).getDescription()}"></p>
+                            <div class="background-icon"><span class="icon-twitter"></span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="row columns">
+        <div class="column is-one-third" >
+            <div class="card large">
+                <div class="card-image">
+                    <figure class="image">
+                        <a th:href="@{'/title?name=' + ${movies.get(3).getName()}}"><img th:src="${movies.get(3).getPathToImage()}" alt="Image"></a>
+                    </figure>
+                </div>
+                <div class="card-content">
+                    <div class="media">
+                        <div class="media-left">
+                            <figure class="image is-96x96">
+                                <img th:src="${movies.get(3).getDirector().getPathToImage()}" alt="Image">
+                            </figure>
+                        </div>
+                        <div class="media-content">
+                            <p class="title is-4 no-padding" th:value="${movies.get(3).getName()}"></p>
+                            <p class="subtitle is-6" th:value="${movies.get(3).getDirector().getName()}"></p>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <p th:value="${movies.get(3).getDescription()}"></p>
+                        <div class="background-icon"><span class="icon-twitter"></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="column is-one-third" >
+            <div class="card large">
+                <div class="card-image">
+                    <figure class="image">
+                        <a th:href="@{'/title?name=' + ${movies.get(4).getName()}}"><img th:src="${movies.get(4).getPathToImage()}" alt="Image"></a>
+                    </figure>
+                </div>
+                <div class="card-content">
+                    <div class="media">
+                        <div class="media-left">
+                            <figure class="image is-96x96">
+                                <img th:src="${movies.get(4).getDirector().getPathToImage()}" alt="Image">
+                            </figure>
+                        </div>
+                        <div class="media-content">
+                            <p class="title is-4 no-padding" th:value="${movies.get(4).getName()}"></p>
+                            <p class="subtitle is-6" th:value="${movies.get(4).getDirector().getName()}"></p>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <p th:value="${movies.get(4).getDescription()}"></p>
+                        <div class="background-icon"><span class="icon-twitter"></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="column is-one-third" >
+            <div class="card large">
+                <div class="card-image">
+                    <figure class="image">
+                        <a th:href="@{'/title?name=' + ${movies.get(5).getName()}}"><img th:src="${movies.get(5).getPathToImage()}" alt="Image"></a>
+                    </figure>
+                </div>
+                <div class="card-content">
+                    <div class="media">
+                        <div class="media-left">
+                            <figure class="image is-96x96">
+                                <img th:src="${movies.get(5).getDirector().getPathToImage()}" alt="Image">
+                            </figure>
+                        </div>
+                        <div class="media-content">
+                            <p class="title is-4 no-padding" th:value="${movies.get(5).getName()}"></p>
+                            <p class="subtitle is-6" th:value="${movies.get(1).getDirector().getName()}"></p>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <p th:value="${movies.get(5).getDescription()}"></p>
+                        <div class="background-icon"><span class="icon-twitter"></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- End Developers -->
+
+
+        <!-- End Staff -->
+    </div>
+</div>
+</body>
+</html>

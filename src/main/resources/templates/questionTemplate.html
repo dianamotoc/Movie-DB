@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MovieTemplate</title>
+    <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon">
+    <!-- Bulma Version 0.8.x-->
+    <link rel="stylesheet" href="https://unpkg.com/bulma@0.8.0/css/bulma.min.css" />
+    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js"></script>
+</head>
+
+<body>
+<nav th:replace="menuBar :: menubar"></nav>
+<section class="hero">
+    <figure >
+        <img style="margin-top: 30px;border-radius: 10%;display: block; margin-left: auto; margin-right: auto; width: 15%" src="https://m.media-amazon.com/images/M/MV5BNmU5OTQ0OWQtOTY0OS00Yjg4LWE1NDYtNDRhYWMxYWY4OTMwXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SY1000_CR0,0,704,1000_AL_.jpg">
+    </figure>
+</section>
+
+<section class="section">
+    <div class="container has-text-centered">
+        <h2 class="title" th:text="${question.getText()}"></h2>
+    </div>
+    </div>
+</section>
+
+
+<section class="section">
+    <div class="container has-text-centered">
+        <h2 class="title">Contact</h2>
+
+        <form>
+            <div class="field is-horizontal">
+                <div class="field-body">
+                    <div class="field">
+                        <p class="control has-icons-left">
+                            <input class="input" type="text" placeholder="Name">
+                            <span class="icon is-small is-left">
+                                    <i class="fas fa-user"></i>
+                                </span>
+                        </p>
+                    </div>
+                    <div class="field">
+                        <p class="control has-icons-left has-icons-right">
+                            <input class="input" type="email" placeholder="Email">
+                            <span class="icon is-small is-left">
+                                    <i class="fas fa-envelope"></i>
+                                </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field is-horizontal">
+                <div class="field-body">
+                    <div class="field">
+                        <div class="control">
+                            <textarea class="textarea" placeholder="Message us"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field is-horizontal">
+                <div class="field-body">
+                    <div class="field">
+                        <div class="control">
+                            <button class="button is-primary">
+                                Send message
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+<script src="../js/bulma.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Index</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<nav th:replace="menuBar :: menubar"></nav>
+<div class="container">
+    <div class="row column" th:each="actor: ${actors}">
+        <div class="card medium">
+            <div class="card-content">
+                <div class="media">
+                    <div class="media-left">
+                        <figure class="image is-96x96">
+                            <img th:src="${actor.getPathToImage()}" alt="Image">
+                        </figure>
+                    </div>
+                    <div class="media-content">
+                        <a th:href="@{'/actor?id=' + ${actor.getId()}}"><p class="title is-4 no-padding" th:text="${actor.getName()}"></p></a>
+                        <p class="subtitle is-6" th:text="${actor.getAge()}"></p>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="content">
+                    <p th:text="${actor.getDescription()}"></p>
+                    <div class="background-icon"><span class="icon-twitter"></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Staff -->
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <nav class="navbar" role="navigation" aria-label="main navigation" th:fragment="menubar" style="background-color: aqua; margin-bottom: 10px">
+        <div class="navbar-brand">
+            <a class="navbar-item brand-text" href="/">
+                Bulma
+            </a>
+
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href = "/">
+                    Home
+                </a>
+
+                <a class="navbar-item" href="/listActors">
+                    Actors
+                </a>
+
+                <a class="navbar-item" href="/listMovies">
+                    Movies
+                </a>
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        More
+                    </a>
+
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item">
+                            About
+                        </a>
+                        <a class="navbar-item">
+                            Jobs
+                        </a>
+                        <a class="navbar-item">
+                            Contact
+                        </a>
+                        <hr class="navbar-divider">
+                        <a class="navbar-item">
+                            Report an issue
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="navbar-menu">
+                <div class="navbar-item">
+                    <div class="control has-icons-left">
+                        <form action="#" th:action="@{/findMovieByName}" method="get">
+                        <input class="input is-small has-text-centered" type="text" placeholder="search" name="movieName">
+                        <span class="icon is-left is-small">
+                        <i class="fa fa-search"></i>
+                    </span>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="button is-primary" href="/register" th:if="${isLoggedIn == false}">
+                            <strong>Sign up</strong>
+                        </a>
+                        <a class="button is-light" href="/login" th:if="${isLoggedIn == false}">
+                            Log in
+                        </a>
+                        <a class="button is-light" href="/logout" th:if="${isLoggedIn == true}">
+                            Log out
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</body>
+</html>

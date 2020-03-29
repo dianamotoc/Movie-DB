@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+</head>
+<body>
+<nav th:replace="menuBar :: menubar"></nav>
+<h1>Form</h1>
+<!--/*@thymesVar id="answer" type=""*/-->
+<form action="#" th:action="@{/addAnswer}" th:object="${answer}" method="post">
+    <!--
+    <p>Id: <input type="text" th:field="*{name}" /></p>
+    <p>Message: <input type="text" th:field="*{age}" /></p>
+    <p>Message: <input type="text" th:field="*{description}" /></p>
+    <p>Message: <input type="text" th:field="*{pathToImage}" /></p>
+    -->
+    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+</form>
+</body>
+</html>

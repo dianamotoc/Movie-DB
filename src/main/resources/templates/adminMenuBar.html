@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="column is-3 " th:fragment="adminmenubar">
+    <aside class="menu is-hidden-mobile">
+        <p class="menu-label">
+            General
+        </p>
+        <ul class="menu-list">
+            <li><a href="adminDashboard">Dashboard</a></li>
+            <li><a>Customers</a></li>
+            <li><a>Other</a></li>
+            <li><a href="/questionForm">Add question</a></li>
+            <li><a href="/allQuestions">List of all questions</a></li>
+        </ul>
+        <p class="menu-label">
+            User
+        </p>
+        <ul class="menu-list">
+            <li><a>Add a User</a></li>
+            <li><a>List of all users</a></li>
+        </ul>
+        <p class="menu-label">
+            Movie
+        </p>
+        <ul class="menu-list">
+            <li><a href="/movieForm" >Add a movie</a></li>
+            <li><a>List of all movies</a></li>
+        </ul>
+        <p class="menu-label">
+            Actor
+        </p>
+        <ul class="menu-list">
+            <li><a href="/actorForm">Add actor</a></li>
+            <li><a href="/allActors">List of all actors</a></li>
+        </ul>
+
+        <p class="menu-label">
+            Director
+        </p>
+        <ul class="menu-list">
+            <li><a href="/directorForm">Add director</a></li>
+            <li><a href="/allDirectors">List of all directors</a></li>
+        </ul>
+    </aside>
+</div>
+</body>
+</html>

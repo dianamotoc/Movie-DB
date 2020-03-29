@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MovieTemplate</title>
+    <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon">
+    <!-- Bulma Version 0.8.x-->
+    <link rel="stylesheet" href="https://unpkg.com/bulma@0.8.0/css/bulma.min.css" />
+    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js"></script>
+</head>
+
+<body>
+<nav th:replace="menuBar :: menubar"></nav>
+<section class="hero">
+    <figure >
+        <img style="margin-top: 30px;border-radius: 10%;display: block; margin-left: auto; margin-right: auto; width: 15%" src="https://m.media-amazon.com/images/M/MV5BNmU5OTQ0OWQtOTY0OS00Yjg4LWE1NDYtNDRhYWMxYWY4OTMwXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SY1000_CR0,0,704,1000_AL_.jpg">
+    </figure>
+</section>
+
+<section class="section">
+    <div class="container has-text-centered">
+        <h2 class="title" th:text="${director.getName()}"></h2>
+        <h4 th:text="${director.getAge()}"></h4>
+        <p th:text="${director.getDescription()}"></p>
+    </div>
+    </div>
+</section>
+<section class="section">
+    <div class="list is-hoverable">
+        <a class="list-item" th:each="movie :${director.getMovieList()}" th:href="@{'/title?name=' + ${movie.getName()}}">
+            <p th:text="${movie.getName()}" ></p>
+        </a>
+    </div>
+</section>
+<script src="../js/bulma.js"></script>
+</body>
+
+</html>
